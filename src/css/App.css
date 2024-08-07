@@ -1,0 +1,864 @@
+/* Base Styles */
+.app {
+  display: flex;
+  min-height: 100vh; /* Ensure full height for the app container */
+}
+
+.sidebar {
+  width: 230px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-right: 1px solid #e7e7e7;
+  height: 100vh; /* Full height */
+  position: fixed; /* Fix the position */
+  justify-content: space-between; /* Distribute space between top and bottom elements */
+}
+
+.right-sidebar {
+  width: 280px; /* Adjusted width to match the new design */
+  background-color: #f8f9fa;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 1px solid #e7e7e7;
+  height: 100vh; /* Full height with bottom gap */
+  position: fixed; /* Fix the position */
+  right: 0; /* Align to the right */
+  z-index: 1000; /* Ensure it stays above other content */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.main-content {
+  flex-grow: 1;
+  margin-left: 230px; /* Default left sidebar width */
+  margin-right: 280px; /* Default right sidebar width */
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+  width: 100%;
+  max-width: 1200px; /* Set a maximum width for the dashboard */
+  padding: 20px;
+}
+
+.header,
+.chart,
+.widgets {
+  width: 100%; /* Ensure they take full width */
+  max-width: 100%; /* Ensure they do not exceed their container */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the top */
+  margin-bottom: 20px;
+}
+
+.balance-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.balance-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.balance-amount {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.balance-change {
+  color: #d9534f; /* Red for negative change */
+  background-color: #fbebf3;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 10px; /* Space between amount and change */
+}
+
+.timeframe-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.timeframe-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.timeframe-buttons button {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.timeframe-buttons .active {
+  font-weight: bold;
+  color: #fff;
+  background-color: #6570e2;
+  border-color: #6570e2;
+}
+
+.chart {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%; /* Ensure it takes full width */
+}
+
+.widgets {
+  display: flex;
+  gap: 20px;
+  width: 100%; /* Ensure it takes full width */
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  flex: 2;
+}
+
+.box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notifications {
+  flex: 1;
+  max-width: 400px; /* Adjust width to ensure proper alignment */
+  overflow-y: auto;
+}
+
+.box-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.box-value {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.box-change {
+  font-size: 1em;
+}
+
+.green {
+  background-color: #f1fcf1;
+}
+
+.red {
+  background-color: #fbebf3;
+}
+
+.green-text {
+  color: #4c9f54;
+}
+
+.red-text {
+  color: #df318b;
+}
+
+.summary-section {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.summary-link.active {
+  color: #6570e2;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+}
+
+.summary-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #6570e2;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+/* Center dashboard content on large screens */
+@media (min-width: 3000px) {
+  .main-content {
+    min-width: 2000px; /* Adjust this value to your preference */
+    padding-left: 00px;
+  }
+
+  .dashboard {
+    min-width: 2200px; /* Adjust this value to your preference */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .chart {
+    max-width: 2200px;
+  }
+
+  .sidebar {
+    min-width: 210px;
+  }
+  .right-sidebar {
+    min-width: 300px;
+  }
+  .widgets {
+    min-width: 1400px;
+    font-size: 20px;
+  }
+}
+@media (min-width: 2199px) and (max-width: 2420) {
+  .main-content {
+    margin-right: 200px;
+    padding-left: 80px;
+    max-width: 1600px; /* Adjust this value to your preference */
+  }
+
+  .dashboard {
+    max-width: 1600px; /* Adjust this value to your preference */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .chart {
+    max-width: 1600px;
+  }
+
+  .sidebar {
+    min-width: 210px;
+  }
+  .right-sidebar {
+    min-width: 250px;
+  }
+  .widgets {
+    min-width: 1340px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .main-content {
+    margin-right: 200px;
+    padding-left: 80px;
+    max-width: 1440px; /* Adjust this value to your preference */
+  }
+
+  .dashboard {
+    max-width: 1600px; /* Adjust this value to your preference */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .chart {
+    max-width: 1800px;
+  }
+
+  .sidebar {
+    min-width: 210px;
+  }
+  .right-sidebar {
+    min-width: 250px;
+  }
+  .widgets {
+    min-width: 1340px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .main-content {
+    margin-right: 200px;
+    min-width: 1200px; /* Adjust this value to your preference */
+  }
+
+  .dashboard {
+    min-width: 1000px; /* Adjust this value to your preference */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .chart {
+    min-width: 860px;
+  }
+
+  .sidebar {
+    min-width: 210px;
+  }
+  .right-sidebar {
+    min-width: 250px;
+  }
+}
+/* Additional Responsive Design for Dashboard */
+@media (min-width: 1401px) {
+  .main-content {
+    margin-right: 100px;
+    min-width: 1000px; /* Adjust this value to your preference */
+  }
+
+  .dashboard {
+    min-width: 900px; /* Adjust this value to your preference */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .chart {
+    min-width: 860px;
+  }
+
+  .sidebar {
+    min-width: 210px;
+  }
+  .sidebar ul li a {
+    font-size: 14px;
+  }
+  .right-sidebar {
+    min-width: 250px;
+  }
+}
+
+@media (min-width: 1350px) and (max-width: 1400px) {
+  .main-content {
+    margin-right: 40px;
+    min-width: 920px; /* Adjust this value to your preference */
+  }
+
+  .dashboard {
+    max-width: 1100px; /* Adjust this value to your preference */
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .chart {
+    min-width: 700px;
+  }
+
+  .sidebar {
+    min-width: 230px;
+  }
+  .sidebar ul li a {
+    font-size: 14px;
+  }
+  .right-sidebar {
+    min-width: 220px;
+  }
+}
+@media (min-width: 1301px) and (max-width: 1349px) {
+  .main-content {
+    margin-right: 40px;
+    min-width: 900px; /* Adjust this value to your preference */
+  }
+
+  .dashboard {
+    max-width: 1000px; /* Adjust this value to your preference */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .chart {
+    min-width: 700px;
+  }
+
+  .sidebar {
+    min-width: 230px;
+  }
+  .sidebar ul li a {
+    font-size: 14px;
+  }
+  .right-sidebar {
+    min-width: 220px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+  .main-content {
+    margin-right: 60px;
+    max-width: 1000px; /* Adjust this value to your preference */
+  }
+
+  .dashboard {
+    max-width: 740px; /* Adjust this value to your preference */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .chart {
+    max-width: 700px;
+  }
+
+  .sidebar {
+    max-width: 180px;
+  }
+  .sidebar ul li a {
+    font-size: 14px;
+  }
+  .right-sidebar {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 1146px) and (max-width: 1999px) {
+  .main-content {
+    margin-right: 60px;
+    max-width: 700px; /* Adjust this value to your preference */
+  }
+
+  .dashboard {
+    max-width: 740px; /* Adjust this value to your preference */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .chart {
+    max-width: 620px;
+  }
+
+  .header {
+    font-size: 12px;
+  }
+
+  .sidebar {
+    max-width: 180px;
+  }
+  .sidebar ul li a {
+    font-size: 14px;
+  }
+  .right-sidebar {
+    max-width: 210px;
+    font-size: 12px;
+  }
+
+  .title-upgrade {
+    font-size: 14px;
+  }
+  .upgrade-items {
+    font-size: 10px;
+  }
+  .building-img {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; /* Adjust right to make it go out of the black box */
+    width: 50px; /* Adjust width as necessary */
+  }
+}
+
+/* Responsive Design */
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .main-content {
+    /* margin-right: 60px; */
+    min-width: 200px; /* Adjust this value to your preference */
+  }
+
+  .dashboard {
+    width: 500px; /* Adjust this value to your preference */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .chart {
+    max-width: 460px;
+  }
+
+  .header {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 190px;
+  }
+  .sidebar ul li a {
+    font-size: 14px;
+  }
+  .right-sidebar {
+    max-width: 220px;
+    font-size: 10px;
+  }
+  .widgets {
+    font-size: 10px;
+    min-width: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title-upgrade {
+    font-size: 12px;
+  }
+  .upgrade-items {
+    font-size: 8px;
+  }
+  .building-img {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; /* Adjust right to make it go out of the black box */
+    width: 50px; /* Adjust width as necessary */
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1000px) {
+  .main-content {
+    margin-right: 60px;
+    max-width: 436px; /* Adjust this value to your preference */
+  }
+
+  .dashboard {
+    max-width: 4300px; /* Adjust this value to your preference */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .chart {
+    max-width: 400px;
+  }
+
+  .header {
+    font-size: 11px;
+  }
+
+  .sidebar {
+    max-width: 180px;
+  }
+  .sidebar ul li a {
+    font-size: 14px;
+  }
+  .right-sidebar {
+    max-width: 190px;
+    font-size: 12px;
+  }
+  .right-sidebar .item-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .widgets {
+    font-size: 8px;
+    min-width: 430px;
+    padding-right: 20px;
+    height: fit-content;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title-upgrade {
+    font-size: 12px;
+  }
+  .upgrade-items {
+    font-size: 8px;
+  }
+  .building-img {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; /* Adjust right to make it go out of the black box */
+    width: 50px; /* Adjust width as necessary */
+  }
+}
+
+@media (min-width: 800px) and (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+  .right-sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 800px;
+  }
+
+  .dashboard {
+    padding: 20px;
+  }
+  .chart {
+    max-width: 720px;
+  }
+  .header {
+    flex-direction: column;
+    font-size: 12px;
+  }
+
+  .widgets {
+    font-size: 10px;
+    min-width: 14px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 799px) {
+  .sidebar {
+    display: none;
+  }
+  .right-sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    margin-right: 0;
+    width: 700px;
+  }
+
+  .dashboard {
+    padding: 20px;
+  }
+  .chart {
+    max-width: 620px;
+  }
+  .header {
+    flex-direction: column;
+    font-size: 12px;
+  }
+
+  .widgets {
+    font-size: 10px;
+    min-width: 14px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 640px) {
+  .sidebar {
+    display: none;
+  }
+  .right-sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    margin-right: 0;
+    width: 600px;
+  }
+
+  .dashboard {
+    padding: 20px;
+  }
+  .chart {
+    max-width: 520px;
+  }
+  .header {
+    flex-direction: column;
+    font-size: 12px;
+  }
+
+  .widgets {
+    font-size: 10px;
+    min-width: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar,
+  .right-sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    margin-right: 0;
+    width: 450px;
+  }
+
+  .dashboard {
+    /* padding: 20px; */
+  }
+
+  .header {
+    flex-direction: column;
+    font-size: 10px;
+  }
+
+  .chart {
+    max-width: 380px;
+  }
+
+  .widgets {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    min-width: 14px;
+  }
+}
+
+/* Existing Styles for dashboard and other elements */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the top */
+  margin-bottom: 20px;
+  width: 100%; /* Ensure it takes full width */
+  padding-right: 0px; /* Adjust padding */
+}
+
+.balance-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.balance-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.balance-amount {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.balance-change {
+  color: #d9534f; /* Red for negative change */
+  background-color: #fbebf3;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 10px; /* Space between amount and change */
+}
+
+.timeframe-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.timeframe-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.timeframe-buttons button {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.timeframe-buttons .active {
+  font-weight: bold;
+  color: #fff;
+  background-color: #6570e2;
+  border-color: #6570e2;
+}
+
+.chart {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%; /* Ensure it takes full width */
+}
+
+.widgets {
+  display: flex;
+  gap: 20px;
+  width: 100%; /* Ensure it takes full width */
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  flex: 2;
+}
+
+.box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notifications {
+  flex: 1;
+  max-width: 400px; /* Adjust width to ensure proper alignment */
+  overflow-y: auto;
+}
+
+.box-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.box-value {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.box-change {
+  font-size: 1em;
+}
+
+.green {
+  background-color: #f1fcf1;
+}
+
+.red {
+  background-color: #fbebf3;
+}
+
+.green-text {
+  color: #4c9f54;
+}
+
+.red-text {
+  color: #df318b;
+}
+
+.summary-section {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.summary-link.active {
+  color: #6570e2;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+}
+
+.summary-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #6570e2;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}

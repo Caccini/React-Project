@@ -1,0 +1,342 @@
+.right-sidebar {
+    width: 280px; /* Adjusted width to match the new design */
+    background-color: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-left: 1px solid #e7e7e7;
+    height: 100vh; /* Full height with bottom gap */
+    position: fixed; /* Fix the position */
+    right: 0; /* Align to the right */
+    z-index: 1000; /* Ensure it stays above other content */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
+  
+  .right-sidebar .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure it takes full width */
+    justify-content: space-between;
+    padding: 0 10px; /* Add padding to profile section */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+  }
+  
+  .profile-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .right-sidebar .profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+  
+  .right-sidebar .profile .alert-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .name-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .right-sidebar .profile .name {
+    font-weight: bold;
+  }
+  
+  .right-sidebar .balance-section {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 10px; /* Add padding to balance section */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .right-sidebar .balance-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+  
+  .right-sidebar .balance-amount {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .right-sidebar .balance-change {
+    color: #61c96d;
+    background-color: #ddf3e6;
+    padding: 8px;
+    border-radius: 14px;
+    font-weight: bold;
+    width: 64px;
+    font-size: 0.7rem;
+  }
+  
+  .right-sidebar .items {
+    width: 100%; /* Ensure it takes full width */
+    padding: 0 10px; /* Add padding to items section */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    margin-top: 14px;
+  }
+  
+  .right-sidebar .items-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+  
+  .right-sidebar .items-container {
+    display: flex;
+  }
+  
+  .right-sidebar .items-content {
+  }
+  
+  .right-sidebar .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 45%;
+  }
+  
+  .right-sidebar .item:last-child {
+    margin-right: 0;
+  }
+  
+  .right-sidebar .item-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .right-sidebar .icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .right-sidebar .icon.pink {
+    background-color: #f8dbeb;
+  }
+  
+  .right-sidebar .icon.green {
+    background-color: #ddf3e6;
+  }
+  
+  .right-sidebar .item-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .right-sidebar .item-title {
+    font-size: 0.6em;
+    font-weight: bold;
+  }
+  
+  .right-sidebar .item-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .right-sidebar .change-value {
+    font-size: 0.7em;
+    padding: 2px 5px;
+    border-radius: 10px;
+    background-color: #f8dbeb;
+    color: #d2679f;
+    margin-top: 5px;
+    display: inline-block;
+  }
+  
+  .right-sidebar .change-value-2 {
+    font-size: 0.7em;
+    padding: 2px 5px;
+    border-radius: 10px;
+    background-color: #ddf3e6;
+    color: #61c96d;
+    margin-top: 5px;
+    display: inline-block;
+  }
+  
+  .right-sidebar .convert {
+    margin-top: 24px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 0 10px; /* Add padding to convert section */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+  }
+  
+  .right-sidebar .convert-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+  
+  .right-sidebar .convert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+  }
+  
+  .right-sidebar .convert-item input {
+    border: none;
+    width: 70%;
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+  }
+  
+  .right-sidebar .convert-item select {
+    border: none;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  .right-sidebar .convert-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .right-sidebar .convert .convert-item select {
+    background-color: #fdf6e9;
+    color: #f2aa58;
+  }
+  
+  .right-sidebar .option-2 {
+    background-color: red;
+  }
+  
+  .right-sidebar .convert-button {
+    width: auto;
+    padding: 14px 24px;
+    background-color: #6570e2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  .right-sidebar .convert-info {
+    font-size: 0.5em;
+    font-weight: bold;
+    color: #999;
+  }
+  
+  .right-sidebar .upgrade {
+    background-color: #141414;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    padding: 0 10px; /* Add padding to upgrade section */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 20px; /* Ensure space at the bottom */
+    position: relative;
+  }
+  
+  .title-upgrade {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  .upgrade-items {
+    font-size: 0.8rem;
+    color: #fff;
+  }
+  
+  .right-sidebar .upgrade-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .building-img {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; /* Adjust right to make it go out of the black box */
+    width: 80px; /* Adjust width as necessary */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1270px) and (min-width: 1001px) {
+    .right-sidebar {
+      width: 240px;
+    }
+  }
+  
+  @media (max-width: 1000px) and (min-width: 770px) {
+    .right-sidebar {
+      width: 200px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .right-sidebar {
+      width: 100%;
+      position: fixed;
+      height: 100%;
+      z-index: 10;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .right-sidebar.active {
+      transform: translateX(0);
+    }
+  
+    .main-content {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .right-sidebar {
+      width: 100%;
+    }
+  
+    .main-content {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+  

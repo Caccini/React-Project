@@ -1,0 +1,48 @@
+/* src/css/Wallet.css */
+.wallet {
+    padding: 10px 20px;
+  }
+  
+  .wallet-details {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 10px;
+  }
+  
+  .wallet-value {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .wallet-change {
+    color: #28a745;
+  }
+  
+  .wallet-coins {
+    margin-top: 10px;
+  }
+  
+  .wallet-coin {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .coin-name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .coin-amount,
+  .coin-value,
+  .coin-change {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .coin-change {
+    color: #28a745;
+  }
+  
